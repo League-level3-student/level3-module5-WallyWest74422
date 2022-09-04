@@ -2,18 +2,24 @@ package _01_StringTrimmer;
 
 public class StringTrimmer {
 
-    /*
-     * This method removes the specified number of characters from the right
-     * side of the specified string and returns the trimmed string. 
-     */
-    static public String trimString(String str, int removesLeft) {
-        // 1. If there are no removes left
-            
-            // 2. Return the string
+	/*
+	 * This method removes the specified number of characters from the right side of
+	 * the specified string and returns the trimmed string.
+	 */
+	static public String trimString(String str, int removesLeft) {
+		// 1. If there are no removes left
 
-        // 3. Else you need to remove the last letter from the string,
-        //    reduce removesLeft by 1, and then call trimString() 
-
-        return null;
-    }
+		if (removesLeft == 0) {
+			System.out.println("Complete");
+			// 2. Return the string
+			return str;
+			// 3. Else you need to remove the last letter from the string,
+			// reduce removesLeft by 1, and then call trimString()
+		} else {
+			str = str.substring(0, str.length() - 1);
+			System.out.println(str);
+			removesLeft = removesLeft - 1;
+		}
+		return trimString(str, removesLeft);
+	}
 }

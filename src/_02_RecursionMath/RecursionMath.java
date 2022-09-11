@@ -1,4 +1,5 @@
-package _02_RecursionMath;
+package _02_RecursionMath
+;
 
 public class RecursionMath {
 
@@ -29,7 +30,10 @@ public class RecursionMath {
 
 	// Try this one on your own!
 	public static int recursivePower(int number, int power) {
-
-		return 0;
+if(power == 1) {
+	return number;
+}else {
+	return (number * recursivePower(number, power-1));
+}
 	}
 }
